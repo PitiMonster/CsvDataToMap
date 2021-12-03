@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { Marker, Popup } from "react-leaflet";
 
 import Leaflet from "leaflet";
 

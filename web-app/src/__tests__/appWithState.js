@@ -1,12 +1,10 @@
-import React, { useContext } from "react";
-import { shallow, mount } from "enzyme";
+import React from "react";
 
-import { render, screen, cleanup } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import App from "../App";
-import { Provider, Context } from "../context/CsvDataContext";
-import Button from "@mui/material/Button";
+import { Provider } from "../context/CsvDataContext";
 import { act } from "react-dom/test-utils";
 
 jest.mock("../context/CsvDataContext", () => {
@@ -47,7 +45,7 @@ test("Test navigation to 'Select order of data' section", () => {
   expect(nextButton).not.toBeDisabled();
 });
 
-test("Test accept typesOrder, show backdrop, displayMap", () => {
+test("Test accept typesOrder, show backdrop", () => {
   const wrapper = render(
     <Provider>
       <App />
@@ -59,9 +57,6 @@ test("Test accept typesOrder, show backdrop, displayMap", () => {
   userEvent.click(nextButton);
   userEvent.click(nextButton);
 
-  // let map = wrapper.container.querySelector("#map");
-  // expect(map).not.toBeInTheDocument();
-
   const lastSectionNextButton = screen.queryByText("Next");
   expect(lastSectionNextButton).not.toBeInTheDocument();
 
@@ -70,10 +65,6 @@ test("Test accept typesOrder, show backdrop, displayMap", () => {
 
   const backdrop = wrapper.container.querySelector("#loading-backdrop").style;
   expect(backdrop).toHaveProperty("opacity", "1");
-
-  // await new Promise((r) => setTimeout(r, 4000));
-  // map = wrapper.container.querySelector("#map");
-  // expect(map).toBeInTheDocument();
 });
 
 test("Check map renders after data upload", async () => {

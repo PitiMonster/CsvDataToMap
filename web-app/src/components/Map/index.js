@@ -1,5 +1,5 @@
 import * as React from "react";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { MapContainer, TileLayer } from "react-leaflet";
 
 import classes from "./index.module.scss";
 import "./map.scss";
@@ -18,43 +18,6 @@ const Map = () => {
   React.useEffect(() => {}, [state.csvData]);
 
   React.useEffect(() => {
-    // const tempData = [
-    //   {
-    //     latitude: 51.123244,
-    //     longitude: 17.043798,
-    //     label: "test1",
-    //   },
-    //   {
-    //     latitude: 51.1232,
-    //     longitude: 17.0437,
-    //     label: "test2",
-    //   },
-    //   {
-    //     latitude: 51.12326,
-    //     longitude: 17.04376,
-    //     label: "test3",
-    //   },
-    //   {
-    //     latitude: 51.1235,
-    //     longitude: 17.0433,
-    //     label: "test4",
-    //   },
-    //   {
-    //     latitude: 51.1231,
-    //     longitude: 17.0433,
-    //     label: "test5",
-    //   },
-    //   {
-    //     latitude: 51.123299,
-    //     longitude: 17.04371,
-    //     label: "test6",
-    //   },
-    //   {
-    //     latitude: 51.1238,
-    //     longitude: 17.0431,
-    //     label: "test7",
-    //   },
-    // ];
     if (state.coordinates.length > 0) {
       let latSum = 0;
       let longSum = 0;

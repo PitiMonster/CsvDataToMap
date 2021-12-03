@@ -1,35 +1,11 @@
-import React, { useContext } from "react";
-import { shallow, mount } from "enzyme";
+import React from "react";
+import { shallow } from "enzyme";
 
-import { render, screen, cleanup } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import App from "../App";
-import { Provider, Context } from "../context/CsvDataContext";
-import Button from "@mui/material/Button";
-
-// jest.mock("../context/CsvDataContext", () => {
-//   const createDataContext = require("../context/createDataContext").default;
-//   // const {
-//   //   csvDataReducer,
-//   //   setCsvData,
-//   //   setTypesOrder,
-//   //   setCoordinates,
-//   // } = require("../context/CsvDataContext");
-//   const { csvDataReducer, setCsvData, setTypesOrder, setCoordinates } =
-//     jest.requireActual("../context/CsvDataContext");
-
-//   const { Context, Provider } = createDataContext(
-//     csvDataReducer,
-//     { setCsvData, setTypesOrder, setCoordinates },
-//     {
-//       csvData: [],
-//       typesOrder: ["city", "state", "zip", "address", "category"],
-//       coordinates: [],
-//     }
-//   );
-//   return { Context, Provider };
-// });
+import { Provider } from "../context/CsvDataContext";
 
 test("Renders without crashing", () => {
   shallow(
